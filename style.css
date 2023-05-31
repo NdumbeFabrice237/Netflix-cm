@@ -1,0 +1,406 @@
+/* Declaring CSS variables */
+:root{
+    --nf-red: #e50914;
+    --nf-red-hover:rgb(193,17,25);
+    --text-color: #fff;
+    --primary-font: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+    --input-border-color:rgba(128, 128, 128, 0.7);
+    --input-bg-color:rgba(22,22,22,0.7);
+    --footer-text-color:rgba(255, 255, 255, 0.7);
+
+    --hero-shadow:linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+    --main-border-color:rgb(35, 35, 35);
+
+    /* Font sizes  for pc*/
+    --title-fz:3rem;
+    --title-fw:900;
+    --subtitle-fz: 1.5rem;
+    --subtitle-fw: 400;
+    --text-fz:1.25rem;
+    --text-fw:400;
+
+    /* Font sizes for mobile */
+    --title-mb-fz:2rem;
+    --title-mb-fw:700;
+    --subtitle-mb-fz: 1.125rem;
+    --text-mb-fz:1.125rem;
+}
+/* Universal styling for all elments on the page */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+    color: var(--text-color);
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body{
+    background-color: #000;
+}
+/* Hero Section starts */
+.nf-hero{
+    background-image:url(./assets/images/heroCM.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.nf-hero>div{
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    background-image: var(--hero-shadow);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* Nav starts */
+.nf-logo{
+    fill:  var(--nf-red);
+    width: 160px;
+    height: 50px;
+}
+
+.btn{
+    cursor: pointer;
+    background-color: var(--nf-red);
+    border: 1px solid var(--nf-red);
+}
+.btn:hover{
+    background-color: var(--nf-red-hover);
+    border: 1px solid var(--nf-red-hover);
+}
+
+.nf-hero-signin{
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: .5rem 1.2rem;
+    border-radius: 5px;
+    color: var(--text-color);
+}
+
+.nf-hero-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 6rem;
+}
+
+/* Nav Ends */
+.nf-hero-main{
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.nf-hero-main-title, .nf-heading{
+    font-size: var(--title-fz);
+    font-weight: var(--title-fw);
+}
+
+.nf-hero-main-subtitle, .nf-text-desc{
+    font-size: var(--subtitle-fz);
+    font-weight: var(--subtitle-fw);
+}
+
+.nf-hero-main-text{
+    font-size: var(--text-fz);
+    font-weight: var(--text-fw);
+}
+
+.nf-hero-main-form{
+    display: flex;
+    flex-flow: row wrap;
+    gap: .8rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    width: 60%;
+}
+
+.nf-hero-main-form-input{
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--input-border-color);
+    background-color: var(--input-bg-color);
+    flex: 0.6;
+    outline: none;
+}
+
+.nf-hero-main-form-btn{
+    display: flex;
+    font-size: var(--subtitle-fz);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 0.65rem;
+    white-space: nowrap;
+    width: 25%;
+    min-width: 10rem;
+}
+/* Hero Section Ends */
+
+.nf-main-section, .nf-footer{
+    padding: 3rem 0;
+    border-top: 8px solid var(--main-border-color);
+}
+.nf-main-section-content{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8rem;
+    width: 100%;
+}
+
+.nf-main-section-content-text{
+    width: 40%;
+}
+.nf-main-section-content-ad_area{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 34%;
+}
+.nf-main-section-content-ad_area>img{
+    width: 100%;
+    flex: 1;
+}
+.nf-main-section-content-ad_area-video{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    max-width: 72%;
+    max-height: 56%;
+    object-fit: contain;
+    left: 13.4%;
+    bottom: 26.5%;
+}
+
+.nf-main-section-content-ad_area-cta{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:57%;
+    background-color: #000;
+    border-radius: 15px;
+    border: 2px solid var(--main-border-color);
+    bottom: 30px;
+}
+
+.nf-main-section-content-ad_area-cta-stranger{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    margin: .7rem;
+    white-space: nowrap;
+}
+.nf-main-section-content-ad_area-cta-stranger-img{
+    width: 25%;
+}
+.nf-main-section-content-ad_area-cta-stranger-text-desc{
+    color: rgb(19, 65, 249);
+}
+.download-gif{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    object-position: right;
+}
+
+.img-left{
+    flex-flow: row-reverse wrap;
+}
+.nf-faq-section{
+    border-top: 8px solid var(--main-border-color);
+    width: 100%;
+}
+.nf-faq-faqs{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    /* margin: 0 auto; */
+    margin: 2em auto;
+    width: 75%;
+}
+.nf-faq-section .nf-heading{
+    text-align: center;
+    margin: 2rem  auto;
+}
+
+.nf-faq-section-main{
+    display: flex;
+    flex-flow: column nowrap;
+    padding-bottom: 2rem;
+}
+
+.nf-faq-section-main>.nf-hero-main-text{
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.nf-faq-section-main>.nf-hero-main-form{
+    margin: 0 auto;
+}
+
+details,
+details>summary {
+    background-color: #303030;
+    font-weight: 400;
+    font-size: var(--subtitle-fz);
+    padding: 0.8rem;
+    margin: 5px 0;
+    text-align: left;
+}
+
+
+details>p {
+    padding: 1.4rem;
+}
+
+summary {
+    display: flex;
+    cursor: pointer;
+    list-style-type: none;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+summary+p {
+    border-top: 1px solid black;
+}
+
+.svg-icon {
+    fill: var(--text-color);
+    transform: rotate(45deg);
+    width: 1.4em;
+    font-weight: 500;
+}
+
+.svg-icon:hover {
+    transform: rotate(0deg);
+}
+
+.nf-footer{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    row-gap: 1.5rem;
+    margin:0 auto;
+    padding-left: 6rem;
+}
+
+.quick-links{
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 20%;
+    align-self: center;
+    /* justify-content: space-around; */
+    width: 100%;
+}
+
+/* min(), calc(), max(), minmax(), clamp() */
+
+.link-group>ul{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+}
+
+.nf-footer a{
+    text-decoration: underline;
+    color: var(--footer-text-color);
+}
+
+.nf-footer>p>span, .country-area>p{
+    color: var(--footer-text-color) !important;
+}
+
+
+.language{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--input-border-color);
+    background-color: var(--input-bg-color);
+    width: fit-content;
+    margin-bottom: 1rem;
+}
+
+.ctry{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.ctry>option{
+    width: 100%;
+    padding: 1rem;
+    background-color:var(--input-bg-color) ;
+    margin: 2rem 0;
+}
+
+.ctry>option:hover, .ctry>option:active, .ctry>option:focus{
+    color: var(--input-bg-color);
+    background: #fff;
+}
+
+
+
+
+
+@media only screen and (max-width: 959px){
+    .nf-hero-nav{
+        padding:1rem;
+    }
+    .nf-hero-main-title, .nf-heading{
+        font-size: var(--title-mb-fz);
+        font-weight: var(--title-mb-fw);
+    }
+    .nf-hero-main-subtitle, .nf-text-desc{
+        font-size: var(--subtitle-mb-fz);
+    }
+    .nf-hero-main-text{
+        font-size: var(--text-mb-fz);
+    }
+}
+
+@media only screen and (max-width: 768px){
+.nf-logo{
+    width: 6rem;
+}
+.nf-main-section-content{
+    flex-flow: column nowrap;
+}
+.nf-main-section-content-text{
+    text-align: center;
+    width: 80%;
+}
+.nf-main-section-content-ad_area{
+    width: 80%;
+    margin-bottom: 2rem;
+}
+}
+
+@media only screen and (max-width: 465px){
+    .nf-hero-main-form-input{
+        min-width: 100%;
+    }
+    .nf-hero-main-form-inpu{
+        min-width: 60%;
+    }
+}
